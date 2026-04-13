@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIAYING HUI | AI Agent Engineer</title>
+    <!-- 引入Tailwind CSS 快速实现精美样式 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#38BDF8',
+                        accent: '#10B981',
+                        light: '#F8FAFC',
+                        dark: '#1E293B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-shadow {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+            }
+            .section-padding {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-primary font-sans">
+    <!-- 导航栏：姓名放大醒目优化 -->
+    <nav class="sticky top-0 bg-white nav-shadow z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl md:text-3xl font-bold text-secondary tracking-wide">JIAYING HUI</a>
+            <!-- 桌面端导航 -->
+            <div class="hidden md:flex gap-6">
+                <a href="#home" class="hover:text-secondary transition-colors">Home</a>
+                <a href="#about" class="hover:text-secondary transition-colors">About</a>
+                <a href="#skills" class="hover:text-secondary transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-secondary transition-colors">Projects</a>
+                <a href="#resume" class="hover:text-secondary transition-colors">Resume</a>
+                <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+            <!-- 移动端导航 -->
+            <div class="md:hidden">
+                <button id="menuBtn" class="text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white px-4 py-2 flex flex-col gap-3">
+            <a href="#home" class="py-2 hover:text-secondary">Home</a>
+            <a href="#about" class="py-2 hover:text-secondary">About</a>
+            <a href="#skills" class="py-2 hover:text-secondary">Skills</a>
+            <a href="#projects" class="py-2 hover:text-secondary">Projects</a>
+            <a href="#resume" class="py-2 hover:text-secondary">Resume</a>
+            <a href="#contact" class="py-2 hover:text-secondary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 1. Home / Headline 板块 -->
+    <section id="home" class="section-padding bg-gradient-to-r from-primary to-dark text-white text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">AI Agent Engineer & LLM Developer</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-300">Seeking AI Agent/LLM Application Job, focusing on Multi-Agent System, RAG Architecture and LLM-based Product Development</p>
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">AI Agent</span>
+                <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">LLM</span>
+                <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">RAG</span>
+                <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">Multi-Agent</span>
+                <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">Python</span>
+                <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">PyTorch</span>
+                <span class="px-4 py-2 bg-secondary/20 rounded-full text-secondary">FastAPI</span>
+            </div>
+            <a href="#projects" class="px-6 py-3 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary/80 transition-colors">View My Projects</a>
+        </div>
+    </section>
+
+    <!-- 2. About Me 板块 -->
+    <section id="about" class="section-padding">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+                <p class="mb-4 leading-relaxed">I am a postgraduate student majoring in Artificial Intelligence & Business Analytics at Lingnan University, with a solid background in Computer Science. I focus on AI Agent architecture design, RAG system development, and LLM application integration. I have rich experience in team project leadership and full-stack AI system development.</p>
+                <p class="mb-6 leading-relaxed">I am passionate about building practical LLM-based products and multi-agent systems, committed to transforming advanced AI technologies into scalable and valuable applications.</p>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-3 text-secondary">Education Background</h3>
+                    <ul class="space-y-2">
+                        <li><strong>Lingnan University, Hong Kong</strong> | MSc in Artificial Intelligence & Business Analytics | 2025 – 2026</li>
+                        <li><strong>Wenhua College</strong> | BEng in Computer Science | 2021 – 2025</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary">Strengths & Focus Areas</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>AI Agent Architecture Design & Multi-Agent Orchestration</li>
+                        <li>Full RAG Pipeline Development & LLM Prompt Engineering</li>
+                        <li>End-to-End AI System Integration & Deployment</li>
+                        <li>Team Project Leadership & Technical Coordination</li>
+                        <li>Machine Learning & Deep Learning Model Development</li>
+                        <li>Data Processing, EDA and Experimental Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Skills 板块 -->
+    <section id="skills" class="section-padding bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-secondary flex items-center">
+                        <i class="fas fa-code mr-2"></i> Technical Skills
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>Python, SQL, C, Java</li>
+                        <li>LLM, RAG, Multi-Agent Systems</li>
+                        <li>PyTorch, Deep Learning Models</li>
+                        <li>Machine Learning Algorithms</li>
+                        <li>Data Processing & EDA Analysis</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-secondary flex items-center">
+                        <i class="fas fa-brain mr-2"></i> Business Skills
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>AI Agent Task Decomposition</li>
+                        <li>Prompt Engineering & Hallucination Reduction</li>
+                        <li>System Design & Architecture Planning</li>
+                        <li>Project Management & Team Coordination</li>
+                        <li>Experimental Design & Performance Analysis</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-secondary flex items-center">
+                        <i class="fas fa-tools mr-2"></i> Tools & Frameworks
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>FastAPI, React, TypeScript</li>
+                        <li>Ollama, OpenCV, Git</li>
+                        <li>PostgreSQL, MongoDB</li>
+                        <li>GitHub, VS Code</li>
+                        <li>PyTorch, Scikit-learn, Pandas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Projects (全项目统一作业格式) -->
+    <section id="projects" class="section-padding">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <div class="space-y-8">
+                <!-- 项目1：LaneChange（个人项目） -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-primary">Lane Change - Deep Learning Game</h3>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">2026 | Personal Project</span>
+                    </div>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Problem:</strong> Develop an AI-driven obstacle avoidance game using reinforcement learning to realize automatic lane change and obstacle avoidance.</p>
+                        <p><strong>Data:</strong> Real-time game environment state data including lane position, obstacle distance and action feedback.</p>
+                        <p><strong>Approach:</strong> Implemented Q-Learning algorithm, designed reward function and epsilon-greedy exploration strategy.</p>
+                        <p><strong>Outcome:</strong> AI agent can independently complete obstacle avoidance tasks, stable performance in 3-lane game environment.</p>
+                        <p><strong>My Contribution:</strong> Independent development of full project including environment construction, agent design, training and deployment.</p>
+                        <div class="pt-2">
+                            <a href="https://github.com/haze1h/LaneChange.git" target="_blank" class="text-secondary hover:underline flex items-center">
+                                <i class="fab fa-github mr-1"></i> View GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目2：HK Intelligent Trip Planner（团队项目） -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-primary">HK Intelligent Trip Planner</h3>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">2026 | Team Project (Leader)</span>
+                    </div>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Problem:</strong> Develop an intelligent system to generate customized multi-day Hong Kong travel itineraries based on user budget, pace, preferences and constraints.</p>
+                        <p><strong>Data:</strong> Hong Kong activity dataset including attractions, food, and entertainment information.</p>
+                        <p><strong>Approach:</strong> Built Planner Agent + Critic Agent architecture, integrated local LLM (Ollama Mistral-7B), FastAPI backend and React frontend.</p>
+                        <p><strong>Outcome:</strong> Realized intelligent itinerary generation with budget estimation, pace control and preference matching, stable multi-turn interaction.</p>
+                        <p><strong>My Contribution:</strong> As team leader, responsible for Planner Agent development, system integration, architecture design and team coordination.</p>
+                        <div class="pt-2">
+                            <a href="https://github.com/haze1h/HK-Intelligent-Trip-Planner.git" target="_blank" class="text-secondary hover:underline flex items-center">
+                                <i class="fab fa-github mr-1"></i> View GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目3：AgenticRAG（统一格式） -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-primary">AgenticRAG for University Policies & Courses</h3>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Team Project | RAG & LLM</span>
+                    </div>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Problem:</strong> Solve the problems of scattered information and inconvenient query of university policies, courses and assignments, build an intelligent Q&A system to improve the efficiency of information acquisition.</p>
+                        <p><strong>Data:</strong> Multi-source text data including university policy documents, course syllabi and assignment requirements.</p>
+                        <p><strong>Approach:</strong> Develop an intelligent Q&A system based on Retrieval-Augmented Generation (RAG) and Agentic architecture.</p>
+                        <p><strong>Outcome:</strong> Realized accurate intelligent Q&A for university information, reduced query costs and improved answer accuracy and reasoning ability.</p>
+                        <p><strong>My Contribution:</strong> Collected and organized multi-source data to provide data support for model construction; Designed and executed test cases to verify the Q&A effect of Agentic RAG; Conducted comparative experiments between Agentic RAG and traditional RAG, quantitatively analyzed accuracy, reasoning ability and efficiency, and provided a basis for system optimization.</p>
+                        <div class="pt-2">
+                            <a href="https://github.com/terzotian/RAGagent.git" target="_blank" class="text-secondary hover:underline flex items-center">
+                                <i class="fab fa-github mr-1"></i> View GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目4：Titanic ML（统一格式） -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-primary">Machine Learning on Titanic Passenger Data</h3>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Team Project | Machine Learning</span>
+                    </div>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Problem:</strong> Build machine learning models to predict the survival probability of Titanic passengers and mine key factors affecting survival rate.</p>
+                        <p><strong>Data:</strong> Public Titanic passenger dataset including personal information, ticket information and survival status.</p>
+                        <p><strong>Approach:</strong> Data cleaning, preprocessing, exploratory data analysis (EDA) and classification model construction.</p>
+                        <p><strong>Outcome:</strong> Completed the full data processing process, provided high-quality data support for model training and result analysis.</p>
+                        <p><strong>My Contribution:</strong> Responsible for data acquisition, data cleaning, preprocessing and Exploratory Data Analysis (EDA) of the Titanic dataset.</p>
+                        <div class="pt-2">
+                            <a href="https://github.com/chuyuezhang2-cmd/Group-Assignment----Five-NN.git" target="_blank" class="text-secondary hover:underline flex items-center">
+                                <i class="fab fa-github mr-1"></i> View GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目5：CIFAR-100 CNN（统一格式） -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-primary">From Linear Baseline to Residual CNN: CIFAR-100 Classification</h3>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Team Project | Deep Learning</span>
+                    </div>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Problem:</strong> Complete image classification task on CIFAR-100 dataset, iterate and optimize from linear baseline model to residual CNN model.</p>
+                        <p><strong>Data:</strong> CIFAR-100 image dataset containing 100 categories of color image data.</p>
+                        <p><strong>Approach:</strong> Dataset splitting, data normalization, data augmentation, and linear baseline model training.</p>
+                        <p><strong>Outcome:</strong> Completed baseline model construction and data preprocessing, laid a foundation for the optimization of deep learning models.</p>
+                        <p><strong>My Contribution:</strong> Downloaded CIFAR-100 dataset and split train/validation/test sets; Implemented data normalization (mean=[0.4914,0.4822,0.4465], std=[0.2023,0.1994,0.2010]) and augmentation (RandomCrop, HorizontalFlip); Trained linear model (input 3072 → 100) as the baseline.</p>
+                        <div class="pt-2">
+                            <a href="https://github.com/coraagg/Group-Assignment---OptiMates.git" target="_blank" class="text-secondary hover:underline flex items-center">
+                                <i class="fab fa-github mr-1"></i> View GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Resume 板块：修复为直接下载本地CV-English.pdf -->
+    <section id="resume" class="section-padding bg-gray-50">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-8">Resume</h2>
+            <div class="bg-white p-8 rounded-xl shadow-md inline-block">
+                <p class="mb-6 text-lg">Download my full resume to learn more about my education, skills and projects.</p>
+                <!-- 核心修改：直接下载本地CV-English.pdf，新增download属性 -->
+                <a href="CV-English.pdf" download class="px-6 py-3 bg-secondary text-white font-semibold rounded-full hover:bg-secondary/80 transition-colors inline-flex items-center">
+                    <i class="fas fa-download mr-2"></i> Download CV (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact 板块 -->
+    <section id="contact" class="section-padding bg-primary text-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-8">
+                <a href="mailto:15090737110@163.com" class="flex items-center justify-center gap-2 text-xl hover:text-secondary transition-colors">
+                    <i class="fas fa-envelope"></i> 15090737110@163.com
+                </a>
+                <a href="https://github.com/haze1h" target="_blank" class="flex items-center justify-center gap-2 text-xl hover:text-secondary transition-colors">
+                    <i class="fab fa-github"></i> github.com/haze1h
+                </a>
+                <a href="tel:+8615090737110" class="flex items-center justify-center gap-2 text-xl hover:text-secondary transition-colors">
+                    <i class="fas fa-phone"></i> +86 15090737110
+                </a>
+            </div>
+            <p class="text-gray-400">Looking forward to connecting with you!</p>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4 text-center">
+        <p>&copy; 2026 JIAYING HUI | AI Agent Engineer Personal Website</p>
+    </footer>
+
+    <!-- 交互JS -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobileMenu a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
